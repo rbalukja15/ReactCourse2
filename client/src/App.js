@@ -1,23 +1,16 @@
 import React from 'react';
 import './App.css';
-import FirstClassComponent from "./components/FirstClassComponent";
+import NavigationBar from "./components/shared/partials/headers/NavigationBar";
+import Test from "./components/Test";
 
-const destructuringObj = {
-    name: "Name",
-    surname: "Surname",
-    details: {
-        age: 12,
-        address: "Tirana"
-    }
-}
 
 function App() {
 
   return (
     <div className="App">
-        <FirstClassComponent data={destructuringObj}>
-            <h1>Child header</h1>
-        </FirstClassComponent>
+        <NavigationBar>
+            <Test />
+        </NavigationBar>
     </div>
   );
 }
