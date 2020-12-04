@@ -10,7 +10,8 @@ function App() {
   return (
     <div className="App">
         <NavigationBar>
-            <FirstClassComponent />
+            {/*<FirstClassComponent />*/}
+            <Test />
         </NavigationBar>
     </div>
   );

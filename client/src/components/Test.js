@@ -1,16 +1,36 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
+import {Button, ButtonGroup} from "@material-ui/core";
 
 function Test(props) {
     const [count, setCount] = useState(0);
 
+    const handleStateChange = (countState) => {
+        setCount(countState);
+    }
+
+    const handleStateReset = () => {
+        setCount(0);
+    }
+
     return (
-      <div>
-          <h1>{props.name}</h1>
-          <p>{props.surname}</p>
-          <p>{props.age}</p>
-          <h1>{count}</h1>
-      </div>
+        <div>
+            <h1>{count}</h1>
+            <ButtonGroup>
+                <Button variant={"contained"}
+                        color={"primary"}
+                        onClick={() => handleStateChange(10)}
+                >
+                    Click to change count
+                </Button>
+                <Button variant={"contained"}
+                        color={"secondary"}
+                        onClick={handleStateReset}
+                >
+                    Reset
+                </Button>
+            </ButtonGroup>
+        </div>
     );
 }
 
