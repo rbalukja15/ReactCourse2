@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import NavigationBar from "./components/shared/partials/headers/NavigationBar";
 import Test from "./components/Test";
+import FirstClassComponent from "./components/FirstClassComponent";
 
 
 function App() {
@@ -9,8 +10,7 @@ function App() {
   return (
     <div className="App">
         <NavigationBar>
-            <Test name={"Name"} surname={"Surname"} age={20}/>
-            <Test />
+            <FirstClassComponent />
         </NavigationBar>
     </div>
   );
