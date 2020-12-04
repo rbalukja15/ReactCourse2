@@ -2,13 +2,22 @@ import React from 'react';
 import './App.css';
 import FirstClassComponent from "./components/FirstClassComponent";
 
-function App() {
+const destructuringObj = {
+    name: "Name",
+    surname: "Surname",
+    details: {
+        age: 12,
+        address: "Tirana"
+    }
+}
 
-    const nameKeys = ['First', 'Second', 'Third'];
+function App() {
 
   return (
     <div className="App">
-        {nameKeys.map((name, index) => <FirstClassComponent key={index} nameKey={name} />)}
+        <FirstClassComponent data={destructuringObj}>
+            <h1>Child header</h1>
+        </FirstClassComponent>
     </div>
   );
 }
