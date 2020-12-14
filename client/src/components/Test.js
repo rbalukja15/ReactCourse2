@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Button, ButtonGroup} from "@material-ui/core";
+import styles from './test.module.scss';
 
 function Test(props) {
     const [count, setCount] = useState(0);
@@ -14,11 +15,11 @@ function Test(props) {
     }
 
     return (
-        <div>
-            <h1>{count}</h1>
+        <div className={styles.mainDiv}>
+            <h1 className={styles.count}>{count}</h1>
             <ButtonGroup>
-                <Button variant={"contained"}
-                        color={"primary"}
+                <Button
+                    className={styles.button}
                         onClick={() => handleStateChange(10)}
                 >
                     Click to change count

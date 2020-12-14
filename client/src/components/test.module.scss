@@ -1,0 +1,18 @@
+.mainDiv {
+  justify-content: center;
+
+  .count {
+    color: #303b37;
+    font-family: "Arial Black", sans-serif;
+    font-weight: bold;
+  }
+
+  .button {
+    outline: black;
+  }
+
+  .button:hover {
+    background-color: rebeccapurple;
+    color: white;
+  }
+}
