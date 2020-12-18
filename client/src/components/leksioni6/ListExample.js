@@ -24,6 +24,12 @@ const initialList = [
     }
 ];
 
+const itemToAdd = {
+    id: 4,
+    name: 'New Item',
+    createdAt: Date.now(),
+}
+
 function ListExample(props) {
     const [list, setList] = useState(initialList);
 
@@ -31,8 +37,13 @@ function ListExample(props) {
         setList(list.filter( value => value.id !== listId ));
     }
 
+    const addItem = () => {
+        setList([...list, itemToAdd])
+    }
+
     return (
         <div>
+            <Button variant={"contained"} color={"primary"} onClick={addItem}>Add to the list</Button>
             <List component={"nav"}>
                 { list.map( (value, index) =>
                     (
