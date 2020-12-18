@@ -5,6 +5,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import AccessAlarmIcon from "@material-ui/icons/AccessAlarm";
 import ListItemText from "@material-ui/core/ListItemText";
 import moment from "moment";
+import axios from 'axios';
 
 const initialList = [
     {
@@ -27,6 +28,12 @@ const initialList = [
 class Item extends Component {
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        axios.get('/api/items').then( (response) => {
+            console.log(response);
+        } ).catch(error => console.log(error))
     }
 
     render() {
