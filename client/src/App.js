@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import NavigationBar from "./components/shared/partials/headers/NavigationBar";
-import Test from "./components/Test";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import muiStyles from "./components/styles/mui.styles";
+import ListExample from "./components/leksioni6/ListExample";
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
         <ThemeProvider theme={muiStyles.theme}>
             <NavigationBar>
-                <Test />
+                <ListExample />
             </NavigationBar>
         </ThemeProvider>
     </div>
