@@ -116,7 +116,7 @@ class Item extends Component {
                 <MUIDataTable
                     title={'List of items'}
                     data={items}
-                    columns={extendextendedTableColumnsedTableColumns}
+                    columns={extendedTableColumns}
                     options={tableOptions}
                 />
             </div>
