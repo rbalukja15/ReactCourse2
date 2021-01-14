@@ -1,65 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MUIDataTable from 'mui-datatables';
-import moment from "moment";
 import {Button} from "@material-ui/core";
+import {tableOptions} from "./items.datatables/table.options";
 
-const tableColumns = [
-    {
-        name: "#",
-        label: "#",
-        options: {
-            filter: false,
-            sort: false,
-            customBodyRender(value, metaData) {
-                return metaData.rowIndex + 1;
-            }
-        }
-    },
-    {
-        name: "name",
-        label: "Name",
-        options: {
-            filter: true,
-            sort: true,
-        }
-    },
-    {
-        name: "origin",
-        label: "Origin",
-        options: {
-            filter: true,
-            sort: true,
-        }
-    },
-    {
-        name: "price",
-        label: "price",
-        options: {
-            filter: true,
-            sort: true,
-        }
-    },
-    {
-        name: "quantity",
-        label: "Quantity",
-        options: {
-            filter: true,
-            sort: true,
-        }
-    },
-    {
-        name: "createdDate",
-        label: "Date",
-        options: {
-            filter: false,
-            sort: false,
-            customBodyRender(value, metaData) {
-                return moment().calendar(value);
-            }
-        }
-    },
-]
+const columns = tableOptions.tableColumns;
 
 class Item extends Component {
     constructor(props) {
@@ -73,6 +18,7 @@ class Item extends Component {
 
     _refreshData = () => {
         axios.get('/api/items').then( (response) => {
+            console.log(response.data);
             this.setState({ items: response.data });
         } ).catch(error => console.log(error))
     }
@@ -95,7 +41,7 @@ class Item extends Component {
         }
 
         const extendedTableColumns = [
-            ...tableColumns,
+            ...columns,
             {
                 name: 'editAction',
                 label: 'Edit Action',
@@ -107,7 +53,7 @@ class Item extends Component {
                     }
                 }
             }
-        ]
+        ];
 
         const { items } = this.state;
 
