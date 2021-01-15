@@ -5,6 +5,7 @@ import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import muiStyles from "./components/styles/mui.styles";
 import Item from "./components/items/Item";
 import EventHandling from "./components/EventHandling";
+import Table from "./components/leksioni9/ReactFragmentsExample";
 
 
 function App() {
@@ -13,8 +14,9 @@ function App() {
     <div className="App">
         <ThemeProvider theme={muiStyles.theme}>
             <NavigationBar>
-                <Item />
+                {/*<Item />*/}
                 {/*<EventHandling />*/}
+                <Table />
             </NavigationBar>
         </ThemeProvider>
     </div>
