@@ -6,6 +6,7 @@ import muiStyles from "./components/styles/mui.styles";
 import Item from "./components/items/Item";
 import EventHandling from "./components/EventHandling";
 import Table from "./components/leksioni9/ReactFragmentsExample";
+import RefExample from "./components/leksioni9/ReactRefs";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
         <ThemeProvider theme={muiStyles.theme}>
             <NavigationBar>
+                <RefExample />
                 <Item />
                 {/*<EventHandling />*/}
                 {/*<Table />*/}
