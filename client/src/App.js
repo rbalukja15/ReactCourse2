@@ -14,9 +14,9 @@ function App() {
     <div className="App">
         <ThemeProvider theme={muiStyles.theme}>
             <NavigationBar>
-                {/*<Item />*/}
+                <Item />
                 {/*<EventHandling />*/}
-                <Table />
+                {/*<Table />*/}
             </NavigationBar>
         </ThemeProvider>
     </div>
