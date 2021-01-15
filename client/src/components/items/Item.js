@@ -25,7 +25,7 @@ class Item extends Component {
 
     deleteItem = (id) => {
         axios.delete(`/api/items/${id}`).then((response) => {
-            console.log(response.data);
+            this._refreshData();
         }).catch(error => console.log(error));
     }
 
@@ -49,7 +49,19 @@ class Item extends Component {
                     filter: false,
                     sort: false,
                     customBodyRender: (value, metaData) => {
-                        return <Button variant={"contained"} color={"secondary"}>Click</Button>;
+                        return <Button variant={"contained"} color={"primary"}>Edit</Button>;
+                    }
+                }
+            },
+            {
+                name: 'deleteAction',
+                label: 'Delete Action',
+                options: {
+                    filter: false,
+                    sort: false,
+                    customBodyRender: (value, metaData) => {
+                        const rowId = this.state.items[metaData.rowIndex]._id;
+                        return <Button variant={"contained"} color={"secondary"} onClick={() => this.deleteItem(rowId)}>Delete</Button>;
                     }
                 }
             }
