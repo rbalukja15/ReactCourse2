@@ -9,14 +9,11 @@ axios.interceptors.request.use( request => {
     request.headers.common = {
         Authorization: 'token'
     }
-    console.log(request.headers);
 
     return request;
 });
 
 axios.interceptors.response.use(response => {
-    console.log(response);
-
     return response;
 })
 

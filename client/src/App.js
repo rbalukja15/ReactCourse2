@@ -10,8 +10,6 @@ import RefExample from "./components/leksioni9/ReactRefs";
 import { Provider } from 'react-redux';
 import store from "./store";
 
-store.dispatch({type: 'GET_ITEMS', payload: { id: 1, name: "mario" }});
-
 function App() {
 
   return (
